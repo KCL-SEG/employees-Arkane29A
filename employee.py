@@ -2,21 +2,71 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name):
+    def __init__(self, name, contracttype, contractnum, commissiontype, hours):
         self.name = name
+        pay = 0
+        self.contracttype = contracttype
+        self.contractnum = contractnum
+        self.commissiontype = commissiontype
+        self.hours = hours
+    
+
+    #input value based on type of contract type
+    def paywage(self, value):
+        
+        if self.contracttype == "salary":
+
+            pay += value
+
+        
+        if self.contracttype == "hourly":
+
+            pay += (self.hours * value)
+        
+        else:
+            pass
+
+
+    #assign value based on the specific 
+
+    def paycommission(self, value):
+        
+        if self.commissiontype == "fixed":
+            pay += value
+
+        
+        if self.commissiontype == "contract":
+
+            pay += (self.contractnum * value)
+
+
+        else:
+            pass
 
     def get_pay(self):
-        pass
+
+
+        return self.pay
+        
+
+       
+
+
+
 
     def __str__(self):
         return self.name
 
 
+
+
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
-billie = Employee('Billie')
+billie = Employee('Billie', "salary", 0, "unknown", 50)
+
+
 
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
-charlie = Employee('Charlie')
+charlie = Employee('Charlie', "hourly", 0, "unknown", 100  )
 
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
 renee = Employee('Renee')
